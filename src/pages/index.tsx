@@ -1,10 +1,9 @@
 import { banner } from '@api/home';
 import type { ReactElement } from 'react';
 import type { ResponseType } from '@/types/index';
-import styles from './index.module.scss';
 
 function Index(): ReactElement {
-  return <div className={styles.home}>hello wrold</div>;
+  return <div>hello wrold</div>;
 }
 
 export async function getStaticProps() {
