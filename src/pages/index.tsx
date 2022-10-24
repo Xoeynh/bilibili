@@ -1,16 +1,15 @@
-import { allList } from '@api/home';
+import { banner } from '@api/home';
 import type { ReactElement } from 'react';
 import type { ResponseType } from '@/types/index';
+import styles from './index.module.scss';
 
 function Index(): ReactElement {
-  return <div>hello wrold</div>;
+  return <div className={styles.home}>hello wrold</div>;
 }
 
 export async function getStaticProps() {
-  const res: ResponseType<any> = await allList({
-    baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL,
-    page: 1,
-    size: 10
+  const res: ResponseType<any> = await banner({
+    baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL
   });
 
   const props = {

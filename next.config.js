@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
 
 const securityHeaders = [
   // xxs保护
@@ -18,6 +19,15 @@ const nextConfig = {
   images: {
     domains: ['www.xlz122.cn']
   },
+  // 全局scss文件
+  sassOptions: {
+    includePaths: [path.join(__dirname, './src/styles')],
+    prependData: `@import "globals.scss";`
+  },
+  // 删除所有console.*
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? true : false
+  },
   // 跨域
   async rewrites() {
     return [
@@ -26,10 +36,6 @@ const nextConfig = {
         destination: `${process.env.NEXT_PUBLIC_API_BASE_URL}/:path*`
       }
     ]
-  },
-  // 删除所有console.*
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production' ? true : false
   },
   // 安全标头
   async headers() {
