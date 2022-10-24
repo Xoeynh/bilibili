@@ -5,7 +5,7 @@ import adapter from '@/utils/adapter';
 import type { ReactElement } from 'react';
 import type { AppProps } from 'next/app';
 import Layout from '@components/layout/Layout';
-import '@/styles/globals.css';
+import '@/styles/global.css';
 import '@/styles/font.css';
 import '@/styles/not-found.scss';
 

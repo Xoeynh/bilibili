@@ -22,7 +22,7 @@ const nextConfig = {
   // 全局scss文件
   sassOptions: {
     includePaths: [path.join(__dirname, './src/styles')],
-    prependData: `@import "globals.scss";`
+    prependData: `@import "global.scss";`
   },
   // 删除所有console.*
   compiler: {
