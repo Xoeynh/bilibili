@@ -4,14 +4,11 @@
 }
 
 body {
-  min-width: 1200px;
-  margin: 0 auto;
-  background: #E9EAED;
+  background: #fff;
   font-size: 12px;
   font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
   line-height: 1.5715;
   color: #444;
-  overflow-x: auto;
 }
 
 ul li {
