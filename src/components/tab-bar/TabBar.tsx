@@ -4,9 +4,15 @@ import type { ResponseType } from '@/types/index';
 import styles from './tab-bar.module.scss';
 
 type Props = {
+  index: number;
+  subIndex: number;
+  tabChange: ({ index, subIndex, tid }: TabChangeParams) => void;
+};
+
+export type TabChangeParams = {
+  index: number;
+  subIndex: number;
   tid: number;
-  subTid: number;
-  tabChange: ({ tid, subTid }: { tid: number; subTid: number }) => void;
 };
 
 type Tab = {
@@ -56,8 +62,8 @@ function TabBar(props: Props): React.ReactElement {
     getPartitions();
   }, []);
 
-  const tabChange = (tid: number): boolean | undefined => {
-    props.tabChange({ tid, subTid: 1 });
+  const tabChange = (index: number, tid: number): boolean | undefined => {
+    props.tabChange({ index, subIndex: 0, tid });
 
     // tid 0为首页 -1为直播
     if (tid === 0 || tid === -1 || tab.data[tid].length === 0) {
@@ -73,8 +79,8 @@ function TabBar(props: Props): React.ReactElement {
     setTab({ ...tab, subList: tab.data[tid] });
   };
 
-  const tabSubChange = (tid: number): void => {
-    props.tabChange({ tid: props.tid, subTid: tid });
+  const tabSubChange = (index: number, tid: number): void => {
+    props.tabChange({ index: props.index, subIndex: index, tid });
   };
 
   return (
@@ -85,10 +91,10 @@ function TabBar(props: Props): React.ReactElement {
             return (
               <div
                 className={`${styles.item} ${
-                  item.tid === props.tid ? styles.activeItem : ''
+                  index === props.index ? styles.activeItem : ''
                 }`}
                 key={index}
-                onClick={() => tabChange(item.tid)}
+                onClick={() => tabChange(index, item.tid)}
               >
                 {item.typename}
               </div>
@@ -103,10 +109,10 @@ function TabBar(props: Props): React.ReactElement {
             return (
               <div
                 className={`${styles.item} ${
-                  item.tid === props.subTid ? styles.activeItem : ''
+                  index === props.subIndex ? styles.activeItem : ''
                 }`}
                 key={index}
-                onClick={() => tabSubChange(item.tid)}
+                onClick={() => tabSubChange(index, item.tid)}
               >
                 {item.typename}
               </div>

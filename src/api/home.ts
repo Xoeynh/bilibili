@@ -15,7 +15,7 @@ export const banner = ({ baseUrl }: BaseParams): AxiosPromise => {
 };
 
 /**
- * @description 首页 - 分类
+ * @description 导航分类
  * @param { String } [baseUrl] - 接口基础url(服务端渲染)
  */
 export const partitions = ({ baseUrl }: BaseParams): AxiosPromise => {
@@ -26,7 +26,7 @@ export const partitions = ({ baseUrl }: BaseParams): AxiosPromise => {
 };
 
 /**
- * @description 首页 - 列表
+ * @description 首页列表
  * @param { String } [baseUrl] - 接口基础url(服务端渲染)
  */
 export const ranking = ({ baseUrl }: BaseParams): AxiosPromise => {
@@ -36,20 +36,52 @@ export const ranking = ({ baseUrl }: BaseParams): AxiosPromise => {
   });
 };
 
-// type RankingRegion = {
-//   rId: number;
-//   day: number;
-// } & BaseParams;
+type RankingRegion = {
+  rId: number;
+  day: number;
+} & BaseParams;
 
-// /**
-//  * @description 导航分类
-//  * @param { String } [baseUrl] - 接口基础url(服务端渲染)
-//  * @param { String } rId - 接口基础url(服务端渲染)
-//  * @param { String } day - 天数
-//  */
-// export const rankingRegion = ({ baseUrl }: RankingRegion): AxiosPromise => {
-//   return axios.request({
-//     url: `${baseUrl ? baseUrl : '/api'}/ranking/region`,
-//     method: 'get'
-//   });
-// };
+/**
+ * @description 导航分类 - 热门推荐列表
+ * @param { String } [baseUrl] - 接口基础url(服务端渲染)
+ * @param { String } rId - 接口基础url(服务端渲染)
+ * @param { String } day - 天数
+ */
+export const rankingRegion = ({
+  baseUrl,
+  rId,
+  day
+}: RankingRegion): AxiosPromise => {
+  const params = { rId, day };
+
+  return axios.request({
+    url: `${baseUrl ? baseUrl : '/api'}/ranking/region`,
+    method: 'get',
+    params
+  });
+};
+
+type RankingArchive = {
+  tId: number;
+  p: number;
+} & BaseParams;
+
+/**
+ * @description 导航分类 - 最新视频列表
+ * @param { String } [baseUrl] - 接口基础url(服务端渲染)
+ * @param { String } tId - 接口基础url(服务端渲染)
+ * @param { String } p - 页数
+ */
+export const rankingArchive = ({
+  baseUrl,
+  tId,
+  p
+}: RankingArchive): AxiosPromise => {
+  const params = { tId, p };
+
+  return axios.request({
+    url: `${baseUrl ? baseUrl : '/api'}/ranking/archive`,
+    method: 'get',
+    params
+  });
+};
