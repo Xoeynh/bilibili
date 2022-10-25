@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import { ranking, rankingRegion, rankingArchive } from '@api/home';
 import type { ResponseType } from '@/types/index';
 import type { TabChangeParams } from '@/components/tab-bar/TabBar';
@@ -8,6 +9,8 @@ import Panel from '@components/panel/Panel';
 import VideoList from '@components/video-list/VideoList';
 
 function Index(): React.ReactElement {
+  const router = useRouter();
+
   const [tab, setTab] = useState<TabChangeParams>({
     index: 0,
     subIndex: 0,
@@ -80,6 +83,12 @@ function Index(): React.ReactElement {
   useEffect(() => {
     if (tab.tid === 0) {
       getRanking();
+      return;
+    }
+
+    // -1为直播
+    if (tab.tid === -1) {
+      router.push({ pathname: '/live' });
       return;
     }
 
