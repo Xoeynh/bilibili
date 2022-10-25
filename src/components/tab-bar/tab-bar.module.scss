@@ -42,7 +42,7 @@
 .item {
   height: px2rem(38);
   line-height: px2rem(38);
-  padding: 0 px2rem(16);
+  margin: 0 px2rem(16);
   font-size: px2rem(14);
   color: '#505050';
   flex-shrink: 0;
@@ -64,7 +64,7 @@
     left: 50%;
     bottom: px2rem(2);
     transform: translateX(-50%);
-    width: 45%;
+    width: 100%;
     border-bottom: px2rem(2.6) solid #fb7299;
     border-radius: 6px;
   }
