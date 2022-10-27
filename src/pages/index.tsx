@@ -14,11 +14,11 @@ function Index(): React.ReactElement {
   const [tab, setTab] = useState<TabChangeParams>({
     index: 0,
     subIndex: 0,
-    tid: 0
+    rid: 0
   });
 
-  const tabChange = ({ index, subIndex, tid }: TabChangeParams): void => {
-    setTab({ index, subIndex, tid });
+  const tabChange = ({ index, subIndex, rid }: TabChangeParams): void => {
+    setTab({ index, subIndex, rid });
   };
 
   const [list, setList] = useState<{ [key: string]: VideoItem[] }>({
@@ -31,7 +31,7 @@ function Index(): React.ReactElement {
   const getRanking = () => {
     ranking({})
       .then((res: ResponseType<{ list: VideoItem[] }>) => {
-        if (res?.code === '1') {
+        if (res?.code === 0) {
           if (!res.data?.list) {
             return false;
           }
@@ -45,11 +45,11 @@ function Index(): React.ReactElement {
   // 热门推荐列表
   const getRankingRegion = () => {
     rankingRegion({
-      rId: tab.tid,
+      rid: tab.rid,
       day: 7
     })
       .then((res: ResponseType<VideoItem[]>) => {
-        if (res?.code === '1') {
+        if (res?.code === 0) {
           if (!res.data) {
             return false;
           }
@@ -65,11 +65,11 @@ function Index(): React.ReactElement {
   // 最新视频列表
   const getRankingArchive = () => {
     rankingArchive({
-      tId: tab.tid,
-      p: 1
+      tid: tab.rid,
+      page: 1
     })
       .then((res: ResponseType<{ archives: VideoItem[] }>) => {
-        if (res?.code === '1') {
+        if (res?.code === 0) {
           if (!res.data?.archives) {
             return false;
           }
@@ -81,44 +81,44 @@ function Index(): React.ReactElement {
   };
 
   useEffect(() => {
-    if (tab.tid === 0) {
+    if (tab.rid === 0) {
       getRanking();
       return;
     }
 
     // -1为直播
-    if (tab.tid === -1) {
+    if (tab.rid === -1) {
       router.push({ pathname: '/live' });
       return;
     }
 
     getRankingRegion();
     getRankingArchive();
-  }, [tab.tid]);
+  }, [tab.rid]);
 
   return (
     <>
       <TabBar index={tab.index} subIndex={tab.subIndex} tabChange={tabChange} />
       {/* 首页 */}
-      {tab.tid === 0 && <VideoList list={list.index} />}
+      {tab.index === 0 && <VideoList list={list.index} />}
       {/* 分类 - 推荐 */}
-      {tab.tid !== 0 && tab.subIndex === 0 && (
+      {tab.index !== 0 && tab.subIndex === 0 && (
         <Panel title="热门推荐" leftIcon subTitle="排行榜" moreColor="#ffa726">
           <VideoList list={list.region} />
         </Panel>
       )}
-      {tab.tid !== 0 && tab.subIndex === 0 && (
+      {tab.index !== 0 && tab.subIndex === 0 && (
         <Panel title="最新视频" subTitle="查看更多" moreColor="#999">
           <VideoList list={list.archive} />
         </Panel>
       )}
       {/* 分类 - 其余子项 */}
-      {tab.tid !== 0 && tab.subIndex !== 0 && (
+      {tab.index !== 0 && tab.subIndex !== 0 && (
         <Panel title="热门推荐">
           <VideoList list={list.region} />
         </Panel>
       )}
-      {tab.tid !== 0 && tab.subIndex !== 0 && (
+      {tab.index !== 0 && tab.subIndex !== 0 && (
         <Panel title="最新视频">
           <VideoList list={list.archive} />
         </Panel>
