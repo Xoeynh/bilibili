@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import type { InputChange } from '@/types';
 import SearchDetail from './search-detail/SearchDetail';
@@ -6,6 +7,12 @@ import SearchHistory from './search-history/SearchHistory';
 import styles from './search.module.scss';
 
 function Search(): React.ReactElement {
+  const router = useRouter();
+
+  const cancel = () => {
+    router.back();
+  };
+
   const [searchValue, setSearchValue] = useState('');
 
   const handleInputChange = (e: InputChange): void => {
@@ -33,7 +40,9 @@ function Search(): React.ReactElement {
             />
           )}
         </div>
-        <span className={styles.clearText}>取消</span>
+        <span className={styles.cancelText} onClick={cancel}>
+          取消
+        </span>
       </div>
       {searchValue && <SearchDetail />}
       {!searchValue && <SearchHistory />}
