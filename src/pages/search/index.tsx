@@ -28,7 +28,7 @@ function Search(): React.ReactElement {
               className={styles.clearIcon}
               width={16}
               height={16}
-              src={`${process.env.NEXT_PUBLIC_BASE_URL}/images/search-close.png`}
+              src={'/images/search-close.png'}
               alt=""
             />
           )}

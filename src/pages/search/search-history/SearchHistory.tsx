@@ -21,7 +21,7 @@ function SearchHistory(): React.ReactElement {
               className={styles.historyItemIcon}
               width={15}
               height={15}
-              src={`${process.env.NEXT_PUBLIC_BASE_URL}/images/search-history.png`}
+              src={'/images/search-history.png'}
               alt=""
             />
             <span className={styles.historyItemText}>一人之下</span>
@@ -31,7 +31,7 @@ function SearchHistory(): React.ReactElement {
               className={styles.historyItemIcon}
               width={15}
               height={15}
-              src={`${process.env.NEXT_PUBLIC_BASE_URL}/images/search-history.png`}
+              src={'/images/search-history.png'}
               alt=""
             />
             <span className={styles.historyItemText}>二次增高</span>
@@ -41,7 +41,7 @@ function SearchHistory(): React.ReactElement {
               className={styles.historyItemIcon}
               width={15}
               height={15}
-              src={`${process.env.NEXT_PUBLIC_BASE_URL}/images/search-history.png`}
+              src={'/images/search-history.png'}
               alt=""
             />
             <span className={styles.historyItemText}>哈</span>
