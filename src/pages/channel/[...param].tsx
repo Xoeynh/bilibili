@@ -52,7 +52,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     });
 
     props.archive = archive?.data?.archives || [];
-  } catch (err) {
+  } catch {
     return {
       notFound: true
     };
