@@ -1,5 +1,6 @@
-import type { ReactElement } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
+import type { ReactElement } from 'react';
 import Logo from '@/components/header/logo/Logo';
 import Avatar from '@/components/header/avatar/Avatar';
 import styles from './header.module.scss';
