@@ -5,7 +5,7 @@ import styles from './space.module.scss';
 
 function Space(): React.ReactElement {
   return (
-    <div className={styles.page}>
+    <div className={styles.space}>
       <div className={styles.coverImage}>
         <Image src={'/images/space-bg.png'} fill sizes="100%" priority alt="" />
       </div>
