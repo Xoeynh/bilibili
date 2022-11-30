@@ -33,7 +33,7 @@ function SearchHistory(props: Props): React.ReactElement {
               className={styles.historyItemIcon}
               width={15}
               height={15}
-              src={'/images/search-history.png'}
+              src={'/images/search/search-history.png'}
               alt=""
             />
             <span className={styles.historyItemText}>雾山五行</span>
@@ -43,7 +43,7 @@ function SearchHistory(props: Props): React.ReactElement {
               className={styles.historyItemIcon}
               width={15}
               height={15}
-              src={'/images/search-history.png'}
+              src={'/images/search/search-history.png'}
               alt=""
             />
             <span className={styles.historyItemText}>百妖谱</span>
@@ -53,7 +53,7 @@ function SearchHistory(props: Props): React.ReactElement {
               className={styles.historyItemIcon}
               width={15}
               height={15}
-              src={'/images/search-history.png'}
+              src={'/images/search/search-history.png'}
               alt=""
             />
             <span className={styles.historyItemText}>一人之下</span>

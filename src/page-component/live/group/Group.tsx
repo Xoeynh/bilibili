@@ -31,7 +31,7 @@ const RenderItem = ({ item }: { item: ListItemType }) => (
           className={styles.moreIcon}
           width={16}
           height={16}
-          src={'/images/live-right-arrow.png'}
+          src={'/images/live/live-right-arrow.png'}
           alt=""
         />
       </div>
@@ -57,7 +57,7 @@ const RenderItem = ({ item }: { item: ListItemType }) => (
                   <Image
                     width={8}
                     height={8}
-                    src={'/images/live-eye.png'}
+                    src={'/images/live/live-eye.png'}
                     alt=""
                   />
                   <span className={styles.itemText}>
