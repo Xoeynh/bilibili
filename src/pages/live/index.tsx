@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { liveIndex } from '@/api/live';
 import type { ResponseType } from '@/types/index';
 import type { BannerType } from '@/page-component/live/banner/Banner';
-import type { ListItemType } from '@/page-component/live/live-group/LiveGroup';
+import type { ListItemType } from '@/page-component/live/group/Group';
 import TabBar from '@/page-component/live/tab-bar/TabBar';
 import LiveBanner from '@/page-component/live/banner/Banner';
-import LiveGroup from '@/page-component/live/live-group/LiveGroup';
+import LiveGroup from '@/page-component/live/group/Group';
 import styles from './live.module.scss';
 
 type Props = {

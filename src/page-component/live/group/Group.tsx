@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import styles from './live-group.module.scss';
+import { formatTenThousand } from '@utils/utils';
+import styles from './group.module.scss';
 
 type Props = {
   list: ListItemType[];
@@ -60,7 +61,7 @@ const RenderItem = ({ item }: { item: ListItemType }) => (
                     alt=""
                   />
                   <span className={styles.itemText}>
-                    {i?.watched_show?.num}
+                    {formatTenThousand(i?.watched_show?.num)}
                   </span>
                 </div>
               </div>

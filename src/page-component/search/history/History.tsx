@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import styles from './search-history.module.scss';
+import styles from './history.module.scss';
 
 type Props = {
   list: HotItem[];

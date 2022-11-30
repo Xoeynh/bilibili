@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './search-detail.module.scss';
+import styles from './detail.module.scss';
 
 function SearchDetail(): React.ReactElement {
   return <div className={styles.searchDetail}>搜索详情</div>;
