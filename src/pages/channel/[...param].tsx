@@ -2,11 +2,11 @@ import React from 'react';
 import { rankingRegion, rankingArchive } from '@api/home';
 import type { GetServerSidePropsContext } from 'next';
 import type { ResponseType } from '@/types/index';
-import type { VideoItem } from '@/pages/home/video-list/VideoList';
+import type { VideoItem } from '@/page-component/home/video-list/VideoList';
 import Layout from '@components/layout/Layout';
-import TabBar from '@/pages/home/tab-bar/TabBar';
-import Panel from '@/pages/home/panel/Panel';
-import VideoList from '@/pages/home/video-list/VideoList';
+import TabBar from '@/page-component/home/tab-bar/TabBar';
+import Panel from '@/page-component/home/panel/Panel';
+import VideoList from '@/page-component/home/video-list/VideoList';
 
 type Props = {
   region: VideoItem[];

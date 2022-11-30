@@ -1,10 +1,10 @@
 import React from 'react';
 import { ranking } from '@api/home';
 import type { ResponseType } from '@/types/index';
-import type { VideoItem } from '@/pages/home/video-list/VideoList';
+import type { VideoItem } from '@/page-component/home/video-list/VideoList';
 import Layout from '@components/layout/Layout';
-import TabBar from '@/pages/home/tab-bar/TabBar';
-import VideoList from '@/pages/home/video-list/VideoList';
+import TabBar from '@/page-component/home/tab-bar/TabBar';
+import VideoList from '@/page-component/home/video-list/VideoList';
 
 type Props = {
   list: VideoItem[];
