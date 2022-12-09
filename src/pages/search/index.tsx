@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useStore, useSelector } from 'react-redux';
 import Image from 'next/image';
@@ -35,7 +35,8 @@ function Search(props: Props): React.ReactElement {
 
   const [searchValue, setSearchValue] = useState('');
   const handleInputChange = (e: InputChange): void => {
-    if (!e.target.value) {
+    // 清空/搜索后再次更改
+    if (!e.target.value || keyword) {
       router.push({ pathname: '/search' });
     }
 
