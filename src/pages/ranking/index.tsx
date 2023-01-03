@@ -1,29 +1,71 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
+import { timeStampToDuration, formatTenThousand } from '@utils/utils';
+import { rankRegion } from '@/api/ranking';
+import type { ResponseType } from '@/types/index';
 import TabBar from '@/page-component/ranking/tab-bar/TabBar';
 import styles from './ranking.module.scss';
 
-type ItemType = {};
+type ItemType = {
+  pic: string;
+  duration: number;
+  title: string;
+  owner: {
+    name: string;
+  };
+  stat: {
+    view: number;
+    danmaku: number;
+  };
+};
 
 function Ranking(): React.ReactElement {
-  const RenderItem = ({ item }: { item: ItemType }) => (
+  const router = useRouter();
+
+  const [list, setList] = useState([]);
+
+  // 获取分类列表
+  const getRankRegion = () => {
+    rankRegion({ rid: Number(router.query.rid) || 0 })
+      .then((res: ResponseType) => {
+        if (res.code === 0) {
+          setList(res.data.list);
+        }
+      })
+      .catch(() => ({}));
+  };
+
+  useEffect(() => {
+    if (!router.query.rid) {
+      return;
+    }
+
+    getRankRegion();
+  }, [router.query.rid]);
+
+  const RenderItem = ({ item, index }: { item: ItemType; index: number }) => (
     <div className={styles.rankItem}>
-      <div className={styles.itemNum}>1</div>
-      <div className={styles.itemWrap}>
-        <div className={styles.itemCover}>
+      <div className={styles.itemNum}>
+        {index < 3 && (
           <Image
-            src={'/images/ranking/icon-arrow.png'}
-            fill
-            sizes="100%"
-            priority
+            width={19.5}
+            height={32}
+            src={`/images/ranking/rank${index + 1}.png`}
             alt=""
           />
-          <span className={styles.itemDuration}>2:27</span>
+        )}
+        {index >= 3 && <span>{index + 1}</span>}
+      </div>
+      <div className={styles.itemWrap}>
+        <div className={styles.itemCover}>
+          <Image src={item.pic} fill sizes="100%" priority alt="" />
+          <span className={styles.itemDuration}>
+            {timeStampToDuration(item.duration)}
+          </span>
         </div>
         <div className={styles.itemInfo}>
-          <p className={styles.infoTitle}>
-            “从放羊娃到国家队队长，37岁的他全场打满120分钟！”
-          </p>
+          <p className={styles.infoTitle}>{item.title}</p>
           <div className={styles.infoAuthor}>
             <Image
               width={14.5}
@@ -31,7 +73,7 @@ function Ranking(): React.ReactElement {
               src={'/images/ranking/icon-up.png'}
               alt=""
             />
-            <span className={styles.authorText}>爱睡觉的kunkun</span>
+            <span className={styles.authorText}>{item.owner?.name}</span>
           </div>
           <div className={styles.infoCount}>
             <div className={styles.countItem}>
@@ -41,7 +83,9 @@ function Ranking(): React.ReactElement {
                 src={'/images/ranking/icon-play.png'}
                 alt=""
               />
-              <span className={styles.authorText}>360.22万</span>
+              <span className={styles.authorText}>
+                {formatTenThousand(item.stat.view)}
+              </span>
             </div>
             <div className={styles.countItem}>
               <Image
@@ -50,7 +94,9 @@ function Ranking(): React.ReactElement {
                 src={'/images/ranking/icon-comment.png'}
                 alt=""
               />
-              <span className={styles.countText}>360.22万</span>
+              <span className={styles.countText}>
+                {formatTenThousand(item.stat.danmaku)}
+              </span>
             </div>
           </div>
         </div>
@@ -60,9 +106,9 @@ function Ranking(): React.ReactElement {
 
   return (
     <div className={styles.ranking}>
-      <RenderItem item={{}} />
-      <RenderItem item={{}} />
-      <RenderItem item={{}} />
+      {list.map((item, index) => {
+        return <RenderItem key={index} item={item} index={index} />;
+      })}
     </div>
   );
 }
