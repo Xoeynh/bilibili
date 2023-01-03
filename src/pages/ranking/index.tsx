@@ -121,7 +121,7 @@ Ranking.getLayout = function getLayout(page: React.ReactElement) {
           className={styles.headerIcon}
           width={10}
           height={20}
-          src={'/images/ranking/ranking-arrow.png'}
+          src={'/images/ranking/icon-arrow.png'}
           alt=""
         />
         <div className={styles.headerText}>排行榜</div>
