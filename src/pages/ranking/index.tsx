@@ -105,16 +105,6 @@ function Ranking(): React.ReactElement {
   );
 
   return (
-    <div className={styles.ranking}>
-      {list.map((item, index) => {
-        return <RenderItem key={index} item={item} index={index} />;
-      })}
-    </div>
-  );
-}
-
-Ranking.getLayout = function getLayout(page: React.ReactElement) {
-  return (
     <>
       <div className={styles.header}>
         <Image
@@ -123,13 +113,18 @@ Ranking.getLayout = function getLayout(page: React.ReactElement) {
           height={20}
           src={'/images/ranking/icon-arrow.png'}
           alt=""
+          onClick={() => router.back()}
         />
         <div className={styles.headerText}>排行榜</div>
       </div>
       <TabBar />
-      {page}
+      <div className={styles.ranking}>
+        {list.map((item, index) => {
+          return <RenderItem key={index} item={item} index={index} />;
+        })}
+      </div>
     </>
   );
-};
+}
 
 export default Ranking;
