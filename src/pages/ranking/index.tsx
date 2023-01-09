@@ -30,14 +30,14 @@ function Ranking(): React.ReactElement {
     rankRegion({ rid: Number(router.query.rid) || 0 })
       .then((res: ResponseType) => {
         if (res.code === 0) {
-          setList(res.data.list);
+          setList(res.data.list.slice(0, 20));
         }
       })
       .catch(() => ({}));
   };
 
   useEffect(() => {
-    if (!router.query.rid) {
+    if (!router.query.rid && router.pathname !== '/ranking') {
       return;
     }
 
