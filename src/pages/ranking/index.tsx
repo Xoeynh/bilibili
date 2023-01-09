@@ -37,7 +37,7 @@ function Ranking(): React.ReactElement {
   };
 
   useEffect(() => {
-    if (!router.query.rid && router.pathname !== '/ranking') {
+    if (!router.query.rid) {
       return;
     }
 
