@@ -86,12 +86,12 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     aid: Number(context.query.aid)
   });
 
-  const props: Props = {
+  const props = {
     data: {}
   };
 
   if (res?.code === 0) {
-    props.data = res.data;
+    props.data = res.data || {};
   }
 
   return {
