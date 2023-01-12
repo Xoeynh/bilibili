@@ -24,6 +24,11 @@ function LiveRoom(props: Props): React.ReactElement {
             alt=""
           />
         </div>
+        <div className={styles.avatar}>
+          <span className={styles.avatarText}>Mo_F丶莫风</span>
+          <span className={styles.avatarText}>1.1w人看过</span>
+        </div>
+        <div className={styles.follow}>+ 关注 </div>
       </div>
       <div className={styles.roomVideo}>
         <div className={styles.videoCover}>
