@@ -4,11 +4,11 @@
 }
 
 .logo {
+  position: relative;
   display: inline-block;
-  width: px2rem(62);
-  min-height: px2rem(28);
-  padding: px2rem(8) 0;
-  margin-left: px2rem(18);
+  width: px2rem(56);
+  height: px2rem(24);
+  margin: px2rem(5.5) 0 px2rem(5.5) px2rem(18);
 }
 
 .operate {

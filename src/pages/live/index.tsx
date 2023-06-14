@@ -22,7 +22,13 @@ function Live(props: Props): React.ReactElement {
     <>
       <div className={styles.header}>
         <Link className={styles.logo} href="/">
-          <Image width={60} height={27} src={'/images/logo-pink.png'} alt="" />
+          <Image
+            fill
+            sizes="50%"
+            priority
+            src={'/images/live/live-logo-pink.png'}
+            alt=""
+          />
         </Link>
       </div>
       <TabBar />
