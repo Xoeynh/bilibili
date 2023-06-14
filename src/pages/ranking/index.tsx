@@ -140,11 +140,13 @@ function Ranking(): React.ReactElement {
         <div className={styles.headerText}>排行榜</div>
       </div>
       <TabBar />
-      <ul className={styles.rankList}>
-        {list?.map((item, index) => {
-          return <RenderItem key={index} item={item} index={index} />;
-        })}
-      </ul>
+      <div className={styles.rankingMain}>
+        <ul className={styles.rankingList}>
+          {list?.map((item, index) => {
+            return <RenderItem key={index} item={item} index={index} />;
+          })}
+        </ul>
+      </div>
     </div>
   );
 }

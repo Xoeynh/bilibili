@@ -22,10 +22,13 @@
   text-align: center;
 }
 
-.rankList {
+.rankingMain {
   flex: 1;
-  padding: 0 px2rem(5);
   overflow-y: auto;
+}
+
+.rankingList {
+  padding: 0 px2rem(5);
 }
 
 .rankItem {
