@@ -1,14 +1,16 @@
-.header {
+.live {
   width: 100%;
-  border-bottom: 1px solid #e7e7e7;
 }
 
 .logo {
-  position: relative;
   display: inline-block;
-  width: px2rem(56);
-  height: px2rem(24);
-  margin: px2rem(5.5) 0 px2rem(5.5) px2rem(18);
+  min-width: 100%;
+  padding: px2rem(5.5) 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.logoImage {
+  margin-left: px2rem(18);
 }
 
 .operate {

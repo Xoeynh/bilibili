@@ -20,18 +20,6 @@ type Props = {
 function Live(props: Props): React.ReactElement {
   return (
     <>
-      <div className={styles.header}>
-        <Link className={styles.logo} href="/">
-          <Image
-            fill
-            sizes="50%"
-            priority
-            src={'/images/live/live-logo-pink.png'}
-            alt=""
-          />
-        </Link>
-      </div>
-      <TabBar />
       <LiveBanner list={props.banner} />
       <LiveGroup list={props.list} />
       <div className={styles.operate}>
@@ -69,5 +57,23 @@ export async function getStaticProps(): Promise<{
     revalidate: 60
   };
 }
+
+Live.getLayout = function getLayout(page: React.ReactElement) {
+  return (
+    <div className={styles.live}>
+      <Link className={styles.logo} href="/">
+        <Image
+          className={styles.logoImage}
+          width={58}
+          height={26}
+          src={'/images/live/live-logo-pink.png'}
+          alt=""
+        />
+      </Link>
+      <TabBar />
+      {page}
+    </div>
+  );
+};
 
 export default Live;
