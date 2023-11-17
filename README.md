@@ -4,10 +4,7 @@
 
 ## 环境要求
 
-需要 NodeJS 16.14.0+ 环境
-
-![](./public/design-sketch/npm-7.21.0.svg)
-![](./public/design-sketch/node-16.8.0.svg)
+需要 NodeJS 18.17.0+ 环境
 
 ## 简介
 
