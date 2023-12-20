@@ -10,12 +10,12 @@
 
 本项目是一个仿写哔哩哔哩H5移动端项目
 
-接口及接口文档请查看[bilibili-api](https://github.com/xlz122/bilibili-api)
+接口及接口文档请查看 [bilibili-server](https://github.com/xlz122/bilibili-server)
 
 ## 项目使用技术栈
 
-* React全家桶
-* Next
+* React
+* Next 14.0.3
 * Redux
 * TypeScript
 
@@ -54,4 +54,5 @@ yarn build
 
 ## 写在最后
 
+* [The MIT License (MIT)](https://github.com/xlz122/bilibili/blob/master/LICENSE)
 * 本项目仅用于学习使用，切勿用于商业用途，否则产生的法律后果与作者无关。
