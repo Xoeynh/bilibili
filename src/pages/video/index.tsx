@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { videoDetail } from '@/api/video';
 import type { GetServerSidePropsContext } from 'next';
 import type { ResponseType } from '@/types';
-import Layout from '@components/layout/Layout';
+import Layout from '@/components/layout/Layout';
 import VideoPlayer from '@/page-component/video/video-player/VideoPlayer';
 import VideoRecommend from '@/page-component/video/recommend/Recommend';
 import VideoComment from '@/page-component/video/comment/Comment';

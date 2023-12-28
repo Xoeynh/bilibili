@@ -4,9 +4,9 @@ import { useStore, useSelector } from 'react-redux';
 import Link from 'next/link';
 import Image from 'next/image';
 import useMounted from '@/hooks/useMounted';
-import { formatDateTime } from '@utils/date';
+import { formatDateTime } from '@/utils/date';
 import type { RootState } from '@/store';
-import Layout from '@components/layout/Layout';
+import Layout from '@/components/layout/Layout';
 import styles from './space.module.scss';
 
 type ItemType = {

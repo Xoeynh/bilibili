@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
-import { formatTenThousand } from '@utils/utils';
+import { formatTenThousand } from '@/utils/utils';
 import { liveIndex } from '@/api/live';
 import type { ResponseType } from '@/types/index';
 import TabBar from '@/page-component/live/tab-bar/TabBar';

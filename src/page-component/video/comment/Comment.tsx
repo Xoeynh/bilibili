@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import { formatDateTime } from '@utils/date';
+import { formatDateTime } from '@/utils/date';
 import { videoComment } from '@/api/video';
 import type { ResponseType } from '@/types';
 import styles from './comment.module.scss';

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { partitions } from '@api/home';
+import { partitions } from '@/api/home';
 import type { ResponseType } from '@/types/index';
 import styles from './tab-bar.module.scss';
 

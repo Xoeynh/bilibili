@@ -2,10 +2,10 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useStore } from 'react-redux';
 import Image from 'next/image';
-import { formatTenThousand } from '@utils/utils';
-import { indexList } from '@api/home';
+import { formatTenThousand } from '@/utils/utils';
+import { indexList } from '@/api/home';
 import type { ResponseType } from '@/types/index';
-import Layout from '@components/layout/Layout';
+import Layout from '@/components/layout/Layout';
 import TabBar from '@/page-component/index/tab-bar/TabBar';
 import styles from './index.module.scss';
 

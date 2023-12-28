@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useSearchParams } from 'next/navigation';
 import { useStore } from 'react-redux';
 import Image from 'next/image';
-import { formatTenThousand } from '@utils/utils';
+import { formatTenThousand } from '@/utils/utils';
 import { videoRecommend } from '@/api/video';
 import type { ResponseType } from '@/types';
 import styles from './recommend.module.scss';

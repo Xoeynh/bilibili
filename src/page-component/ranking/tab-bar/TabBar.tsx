@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { rankNav } from '@api/ranking';
+import { rankNav } from '@/api/ranking';
 import type { ResponseType } from '@/types/index';
 import styles from './tab-bar.module.scss';
 

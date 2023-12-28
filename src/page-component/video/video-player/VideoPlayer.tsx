@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import { timeStampToDuration, formatTenThousand } from '@utils/utils';
-import { formatDateTime } from '@utils/date';
+import { timeStampToDuration, formatTenThousand } from '@/utils/utils';
+import { formatDateTime } from '@/utils/date';
 import { videoPlayurl } from '@/api/video';
 import type { ResponseType } from '@/types';
 import styles from './video-player.module.scss';

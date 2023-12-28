@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
-import { formatTenThousand } from '@utils/utils';
+import { formatTenThousand } from '@/utils/utils';
 import { liveAreaList } from '@/api/live';
 import type { GetServerSidePropsContext } from 'next';
 import type { ResponseType } from '@/types/index';

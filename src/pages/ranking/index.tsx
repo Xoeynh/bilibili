@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useSearchParams } from 'next/navigation';
 import { useStore } from 'react-redux';
 import Image from 'next/image';
-import { timeStampToDuration, formatTenThousand } from '@utils/utils';
+import { timeStampToDuration, formatTenThousand } from '@/utils/utils';
 import { rankRegion } from '@/api/ranking';
 import type { ResponseType } from '@/types/index';
 import TabBar from '@/page-component/ranking/tab-bar/TabBar';
