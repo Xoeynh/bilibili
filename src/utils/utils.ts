@@ -25,7 +25,8 @@ export function formatTenThousand(num: number): string {
 
 /**
  * @description 时间戳转视频时长
- * @return { String } 视频时长 01:23:45
+ * @param { number } timeStamp - 时间戳
+ * @return { string } 视频时长 01:23:45
  */
 export function timeStampToDuration(timeStamp: number): string {
   const time = timeStamp.toString();

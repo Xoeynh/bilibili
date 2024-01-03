@@ -9,8 +9,9 @@ type VideoDetail = BaseParams & {
 
 /**
  * @description 视频详情
- * @param { String } [baseUrl] - 接口基础url(服务端渲染)
- * @param { Number } aid - 视频id
+ * @param { Object } params
+ * @param { string } [params.baseUrl] - 接口基础url(服务端渲染)
+ * @param { number } params.aid - 视频id
  */
 export const videoDetail = ({ baseUrl, aid }: VideoDetail): AxiosPromise => {
   const params = { aid };
@@ -29,9 +30,10 @@ type VideoPlayurl = BaseParams & {
 
 /**
  * @description 视频详情 - 播放链接
- * @param { String } [baseUrl] - 接口基础url(服务端渲染)
- * @param { Number } aid - 视频id
- * @param { Number } cid - 视频详情获取
+ * @param { Object } params
+ * @param { string } [params.baseUrl] - 接口基础url(服务端渲染)
+ * @param { number } params.aid - 视频id
+ * @param { number } params.cid - 视频详情获取
  */
 export const videoPlayurl = ({
   baseUrl,
@@ -53,8 +55,9 @@ type VideoRecommend = BaseParams & {
 
 /**
  * @description 视频详情 - 相关推荐
- * @param { String } [baseUrl] - 接口基础url(服务端渲染)
- * @param { Number } aid - 视频id
+ * @param { Object } params
+ * @param { string } [params.baseUrl] - 接口基础url(服务端渲染)
+ * @param { number } params.aid - 视频id
  */
 export const videoRecommend = ({
   baseUrl,
@@ -76,9 +79,10 @@ type VideoComment = BaseParams & {
 
 /**
  * @description 视频详情 - 评论
- * @param { String } [baseUrl] - 接口基础url(服务端渲染)
- * @param { Number } aid - 视频id
- * @param { Number } page - 页数
+ * @param { Object } params
+ * @param { string } [params.baseUrl] - 接口基础url(服务端渲染)
+ * @param { number } params.aid - 视频id
+ * @param { number } params.page - 页数
  */
 export const videoComment = ({
   baseUrl,

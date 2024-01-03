@@ -5,7 +5,8 @@ type BaseParams = { baseUrl?: string };
 
 /**
  * @description 直播首页
- * @param { String } [baseUrl] - 接口基础url(服务端渲染)
+ * @param { Object } params
+ * @param { string } [params.baseUrl] - 接口基础url(服务端渲染)
  */
 export const liveIndex = ({ baseUrl }: BaseParams): AxiosPromise => {
   return axios.request({
@@ -16,7 +17,8 @@ export const liveIndex = ({ baseUrl }: BaseParams): AxiosPromise => {
 
 /**
  * @description 直播分类
- * @param { String } [baseUrl] - 接口基础url(服务端渲染)
+ * @param { Object } params
+ * @param { string } [params.baseUrl] - 接口基础url(服务端渲染)
  */
 export const liveArea = ({ baseUrl }: BaseParams): AxiosPromise => {
   return axios.request({
@@ -34,11 +36,12 @@ type LiveAreaList = BaseParams & {
 
 /**
  * @description 直播分类列表
- * @param { String } [baseUrl] - 接口基础url(服务端渲染)
- * @param { Number } parent_area_id - 分类id
- * @param { Number } area_id - 默认传0
- * @param { Number } page - 页数
- * @param { Number } size - 条数
+ * @param { Object } params
+ * @param { string } [params.baseUrl] - 接口基础url(服务端渲染)
+ * @param { number } params.parent_area_id - 分类id
+ * @param { number } params.area_id - 默认传0
+ * @param { number } params.page - 页数
+ * @param { number } params.size - 条数
  */
 export const liveAreaList = ({
   baseUrl,
@@ -62,8 +65,9 @@ type LiveInfo = BaseParams & {
 
 /**
  * @description 直播 - 房间信息
- * @param { String } [baseUrl] - 接口基础url(服务端渲染)
- * @param { Number } roomid - 直播ID
+ * @param { Object } params
+ * @param { string } [params.baseUrl] - 接口基础url(服务端渲染)
+ * @param { number } params.roomid - 直播id
  */
 export const liveInfo = ({ baseUrl, roomid }: LiveInfo): AxiosPromise => {
   const params = { roomid };

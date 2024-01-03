@@ -5,7 +5,8 @@ type BaseParams = { baseUrl?: string };
 
 /**
  * @description 默认搜索关键词
- * @param { String } [baseUrl] - 接口基础url(服务端渲染)
+ * @param { Object } params
+ * @param { string } [params.baseUrl] - 接口基础url(服务端渲染)
  */
 export const searchDefatult = ({ baseUrl }: BaseParams): AxiosPromise => {
   return axios.request({
@@ -16,7 +17,8 @@ export const searchDefatult = ({ baseUrl }: BaseParams): AxiosPromise => {
 
 /**
  * @description 热搜列表
- * @param { String } [baseUrl] - 接口基础url(服务端渲染)
+ * @param { Object } params
+ * @param { string } [params.baseUrl] - 接口基础url(服务端渲染)
  */
 export const searchHot = ({ baseUrl }: BaseParams): AxiosPromise => {
   return axios.request({
@@ -31,8 +33,9 @@ type SearchSuggest = BaseParams & {
 
 /**
  * @description 搜索建议
- * @param { String } [baseUrl] - 接口基础url(服务端渲染)
- * @param { String } keyword - 搜索关键词
+ * @param { Object } params
+ * @param { string } [params.baseUrl] - 接口基础url(服务端渲染)
+ * @param { string } params.keyword - 搜索关键词
  */
 export const searchSuggest = ({
   baseUrl,
@@ -57,12 +60,13 @@ type SearchType = BaseParams & {
 
 /**
  * @description 搜索详情
- * @param { String } [baseUrl] - 接口基础url(服务端渲染)
- * @param { String } keyword - 搜索关键词
- * @param { String } search_type - 搜索类型(综合/番剧/UP主/影视)
- * @param { String } order - 排序方式(默认排序/播放多/新发布/弹幕多)
- * @param { Number } page - 页数
- * @param { Number } size - 条数
+ * @param { Object } params
+ * @param { string } [params.baseUrl] - 接口基础url(服务端渲染)
+ * @param { string } params.keyword - 搜索关键词
+ * @param { string } params.search_type - 搜索类型(综合/番剧/UP主/影视)
+ * @param { string } params.order - 排序方式(默认排序/播放多/新发布/弹幕多)
+ * @param { number } params.page - 页数
+ * @param { number } params.size - 条数
  */
 export const searchType = ({
   baseUrl,

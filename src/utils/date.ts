@@ -1,10 +1,8 @@
 /**
  * @description 日期字符串/时间戳转日期字符串
- * @param { String | Number | Date } - date 日期字符串/时间戳/Date
- * @param { String } - 日期字符串格式
  */
 export function formatDateTime(
-  date: string | Date | number,
+  date: string | number | Date,
   fmt = 'yyyy-MM-dd hh:mm:ss'
 ): string {
   if (!date) {
