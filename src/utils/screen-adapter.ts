@@ -1,5 +1,5 @@
 /**
- * @description 屏幕适配(适配不同屏幕的字体大小)
+ * @description 屏幕自适应
  */
 export default function screenAdapter() {
   let clientWidth =
