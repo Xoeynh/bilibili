@@ -2,7 +2,6 @@
 const path = require('path');
 
 const securityHeaders = [
-  // xxs保护
   {
     key: 'X-XSS-Protection',
     value: '1; mode=block'
