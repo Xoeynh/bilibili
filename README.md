@@ -45,12 +45,11 @@ yarn build
 
 |首页|直播|排行榜|我的|
 |---|---|---|---|
-|![](./public/design-sketch/home.jpg)|![](./public/design-sketch/live.jpg)|![](./public/design-sketch/ranking.jpg)|![](./public/design-sketch/space.jpg)|
+|![](./preview/home.jpg)|![](./preview/live.jpg)|![](./preview/ranking.jpg)|![](./preview/space.jpg)|
 
 |视频详情|搜索|搜索建议|搜索详情|
 |---|---|---|---|
-|![](./public/design-sketch/video.jpg)|![](./public/design-sketch/search.jpg)|![](./public/design-sketch/search-suggest.jpg)|![](./public/design-sketch/search-detail.jpg)|
-
+|![](./preview/video.jpg)|![](./preview/search.jpg)|![](./preview/search-suggest.jpg)|![](./preview/search-detail.jpg)|
 
 ## 写在最后
 
