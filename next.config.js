@@ -16,7 +16,16 @@ const nextConfig = {
   swcMinify: true,
   // 图片基础路径
   images: {
-    domains: ['i0.hdslb.com', 'i1.hdslb.com', 'i2.hdslb.com', 's1.hdslb.com']
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: '**.hdslb.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.hdslb.com',
+      }
+    ]
   },
   // 全局scss文件
   sassOptions: {
