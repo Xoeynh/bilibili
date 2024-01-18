@@ -1,6 +1,6 @@
 /**
  * @description 格式化数字
- * @return 1218807 => 121.9万
+ * @return { string } 1218807 => 121.9万
  */
 export function formatTenThousand(num: number): string {
   const numStr = String(num);
